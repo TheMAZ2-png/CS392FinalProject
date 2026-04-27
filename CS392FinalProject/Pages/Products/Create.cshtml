@@ -1,0 +1,37 @@
+﻿@page
+@model CS392FinalProject.Pages.Products.CreateModel
+
+<h1>Add Product</h1>
+
+<form method="post">
+    <div class="form-group mb-3">
+        <label asp-for="Product.Name" class="form-label"></label>
+        <input asp-for="Product.Name" class="form-control" />
+        <span asp-validation-for="Product.Name" class="text-danger"></span>
+    </div>
+
+    <div class="form-group mb-3">
+        <label asp-for="Product.Price" class="form-label"></label>
+        <input asp-for="Product.Price" class="form-control" />
+        <span asp-validation-for="Product.Price" class="text-danger"></span>
+    </div>
+
+    <div class="form-group mb-3">
+        <label asp-for="Product.Category" class="form-label"></label>
+        <input asp-for="Product.Category" class="form-control" />
+        <span asp-validation-for="Product.Category" class="text-danger"></span>
+    </div>
+
+    <div class="form-group mb-3">
+        <label asp-for="Product.InStock" class="form-label"></label>
+        <input asp-for="Product.InStock" type="checkbox" class="form-check-input" />
+        <span asp-validation-for="Product.InStock" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-success">Create</button>
+    <a class="btn btn-secondary" href="/Products">Cancel</a>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

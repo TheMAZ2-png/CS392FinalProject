@@ -1,0 +1,30 @@
+﻿@page "{id}"
+@model CS392FinalProject.Pages.Products.EditModel
+
+<h1>Edit Product</h1>
+
+<form method="post">
+    <input type="hidden" asp-for="Product.Id" />
+
+    <div class="form-group">
+        <label>Name</label>
+        <input asp-for="Product.Name" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label>Price</label>
+        <input asp-for="Product.Price" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label>Category</label>
+        <input asp-for="Product.Category" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label>In Stock</label>
+        <input asp-for="Product.InStock" type="checkbox" />
+    </div>
+
+    <button class="btn btn-primary">Save</button>
+</form>

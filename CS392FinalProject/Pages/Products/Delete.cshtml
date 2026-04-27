@@ -1,0 +1,11 @@
+﻿@page "{id}"
+@model CS392FinalProject.Pages.Products.DeleteModel
+
+<h1>Delete Product</h1>
+
+<p>Are you sure you want to delete <strong>@Model.Product.Name</strong>?</p>
+
+<form method="post">
+    <button class="btn btn-danger">Delete</button>
+    <a class="btn btn-secondary" href="/Products">Cancel</a>
+</form>

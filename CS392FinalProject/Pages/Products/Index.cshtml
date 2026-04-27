@@ -1,0 +1,35 @@
+﻿@page
+@model CS392FinalProject.Pages.Products.IndexModel
+
+<h1>Products</h1>
+
+<p>
+    <a class="btn btn-primary" href="/Products/Create">Add New Product</a>
+</p>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Category</th>
+            <th>In Stock</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var p in Model.Products)
+        {
+            <tr>
+                <td>@p.Name</td>
+                <td>@p.Price</td>
+                <td>@p.Category</td>
+                <td>@p.InStock</td>
+                <td>
+                    <a class="btn btn-sm btn-warning" href="/Products/Edit/@p.Id">Edit</a>
+                    <a class="btn btn-sm btn-danger" href="/Products/Delete/@p.Id">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
