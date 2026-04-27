@@ -1,0 +1,44 @@
+﻿@page
+@model CS392FinalProject.Pages.Products.AiQueryModel
+
+<h1>AI Product Assistant</h1>
+
+<form method="post" class="mb-3">
+    <label class="form-label">Ask a question about products</label>
+    <input asp-for="UserQuery" class="form-control" placeholder="e.g., Show me electronics under $500" />
+    <button class="btn btn-primary mt-2">Ask</button>
+</form>
+
+@if (Model.AiAnswer != null)
+{
+    <div class="alert alert-info">
+        <strong>AI Answer:</strong>
+        <p>@Model.AiAnswer</p>
+    </div>
+}
+
+@if (Model.MatchedProducts.Any())
+{
+    <h3>Matched Products</h3>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Category</th>
+                <th>Price</th>
+                <th>In Stock</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var p in Model.MatchedProducts)
+            {
+                <tr>
+                    <td>@p.Name</td>
+                    <td>@p.Category</td>
+                    <td>@p.Price</td>
+                    <td>@p.InStock</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
