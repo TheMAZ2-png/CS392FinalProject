@@ -30,6 +30,7 @@ namespace CS392FinalProject.Pages.Products
             return Page();
         }
 
+
         public async Task<IActionResult> OnPostAsync(string id)
         {
             if (string.IsNullOrEmpty(id))
